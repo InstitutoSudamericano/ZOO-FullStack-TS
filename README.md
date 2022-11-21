@@ -1,2 +1,2 @@
 # ZOO-FullStack-TS
-CRUD of a Zoo - Nestjs - React -Typescript
+CRUD of a Zoo - Nestjs - Nextjs -Typescript
