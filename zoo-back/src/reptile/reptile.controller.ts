@@ -1,12 +1,31 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Put, Delet } from '@nestjs/common';
 import { Console } from 'console';
 import { CreatereptileDto } from './Dto/controller-reptile.dto';
 
 @Controller('reptile')
 export class ReptileController {
 
-    @Post()
-    async creat (@Body() createreptileDto: CreatereptileDto ){
-        return `this action creat a dog ${createreptileDto.name}`
+    @Get()
+    creat(): string {
+        return `This action retuns all insects`;
     }
+
+    @Post()
+    async create(@Body() createreptiledto : CreatereptileDto ) {
+        return `This action adds a new insects, ${createreptiledto.name}`;
+    }
+   
+    @Put(':id')
+    update (@Param('id') id:string, @Body() createreptiledto: CreatereptileDto) {
+      return `This action updates a #${id} dog`;
+    }
+
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+        return `This action remove a #${id} dog`;
+    }
+
 }
+
+
+
